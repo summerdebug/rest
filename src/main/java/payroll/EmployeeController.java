@@ -1,9 +1,6 @@
 package payroll;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,15 @@ public class EmployeeController {
     @GetMapping("/employees")
     List<Employee> all() {
         return repository.findAll();
+    }
+
+    /**
+     * To test it open in browser http://localhost:8080/employees/2
+     */
+    @GetMapping("/employees/{id}")
+    Employee one(@PathVariable Long id) {
+        return repository.findById(id).orElseThrow(() ->
+                new RuntimeException("Not found"));
     }
 
     /**
