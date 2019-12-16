@@ -25,9 +25,9 @@ public class EmployeeController {
      * To test it open in browser http://localhost:8080/employees/2
      */
     @GetMapping("/employees/{id}")
-    Employee one(@PathVariable Long id) {
+    Employee one(@PathVariable Long id) throws EmployeeNotFoundException {
         return repository.findById(id).orElseThrow(() ->
-                new RuntimeException("Not found"));
+                new EmployeeNotFoundException(id));
     }
 
     /**
