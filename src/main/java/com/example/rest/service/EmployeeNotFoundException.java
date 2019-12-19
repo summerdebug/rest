@@ -1,4 +1,4 @@
-package payroll;
+package com.example.rest.service;
 
 public class EmployeeNotFoundException extends Exception {
 

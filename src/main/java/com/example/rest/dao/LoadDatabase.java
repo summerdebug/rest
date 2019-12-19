@@ -1,5 +1,6 @@
-package payroll;
+package com.example.rest.dao;
 
+import com.example.rest.model.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
